@@ -16,6 +16,7 @@
 
 .shesaidyes {
     display: none;
+    text-align: center;
 }
 
 @keyframes pulse {
