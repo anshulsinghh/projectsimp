@@ -1,0 +1,33 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#envelope {
+    display: none;
+    margin: auto;
+    width: 30%;
+	transform: scale(1);
+	animation: pulse 0.75s infinite;
+}
+
+.shesaidyes {
+    display: none;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.95);
+	}
+}
