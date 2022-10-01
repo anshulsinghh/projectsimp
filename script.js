@@ -40,8 +40,28 @@ get(child(ref(db), "gf")).then((snapshot) => {
 
             document.getElementById("envelope").style.display = "block";
         }
+
+        if (!snapshot.val().clickedonemonthletter) {
+            document.getElementById("envelope").style.display = "block";
+            document.getElementById("onemonthtitle").style.display = "block";
+        } else {
+            document.getElementById("onemonthtitle").style.display = "none";
+            document.getElementById("envelope").style.display = "none";
+        }
     }
 })
+
+document.getElementById ("envelope").addEventListener ("click", clickedLetter, false);
+
+function clickedLetter() {
+    set(ref(db, "gf"), {
+        isgf: true,
+        time: "Thu, 25 Aug 2022 20:11:18 GMT",
+        clickedonemonthletter: true
+    }).then(() => {
+        window.location.href = "onemonth.html"
+    })  
+}
 
 var x = setInterval(function() {
 
